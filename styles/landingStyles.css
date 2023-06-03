@@ -1,214 +1,419 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-:root{
-    --lighter-red: #c51e0e;
-    --white-text: #c3c4d3;
-    --lighter-green: #0fb36e;
+:root {
+  --lighter-red: #c51e0e;
+  --white-text: #c3c4d3;
+  --lighter-green: #0fb36e;
 }
 
-body{
-    font-family: 'Press Start 2P', cursive;
-    height: 100%;
-    font-size: 55px;
+body {
+  font-family: "Press Start 2P", cursive;
+  height: 100%;
+  font-size: 55px;
 }
 
-img{
-    width: 3rem;
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.video-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
 }
 
-.video-container video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: fixed;
+svg {
+  width: 100vw;
+  height: 50vh;
+  position: fixed;
+  top: 1em;
 }
 
-svg{
-    width: 100vw;
-    height: 50vh;
-    position: fixed;
-    top: 1em;
+path {
+  fill: transparent;
 }
 
-path{
-    fill: transparent;
+text {
+  fill: var(--lighter-red);
 }
 
-text{
-    fill: var(--lighter-red);
+.game-story-text {
+  position: fixed;
+  top: 30%;
+  text-align: center;
+  padding: 13px;
+  font-size: 11px;
+  color: var(--white-text);
+  line-height: 15px;
 }
 
-.game-story-text{
-    position: fixed;
-    top: 30%;
-    text-align: center;
-    padding: 13px;
+.buttons {
+  position: absolute;
+  z-index: 1;
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttons .button-name {
+  padding: 10px 1px;
+  border-radius: 20px;
+  border: 2px solid black;
+  font-size: 8px;
+  color: var(--white-text);
+  background-color: var(--lighter-red);
+  font-family: "Press Start 2P", cursive;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.button-start {
+  padding: 11px 1px;
+  border-radius: 20px;
+  border: 2px solid black;
+  right: 8rem;
+  font-size: 7px;
+  color: var(--white-text);
+  background-color: #a4a1a184;
+  font-family: "Press Start 2P", cursive;
+  margin-left: -10px;
+  transition: background-color 1s cubic-bezier(1, 1, 1, 1);
+}
+
+.modal {
+  font-size: 26%;
+  text-align: center;
+  border-radius: 40px;
+  border: transparent;
+  padding: 25px;
+  width: fit-content;
+  background-color: #0a0a0ac4;
+  color: #f8f8f8;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.318);
+}
+
+.modal-close {
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--white-text);
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: transparent;
+  border: none;
+}
+
+.modal-close:hover {
+  color: var(--lighter-red);
+}
+
+.modal input {
+  font-family: "Press Start 2P", cursive;
+  border-radius: 20px;
+  padding: 15px;
+  max-width: 250px;
+  margin: 10px;
+  background-color: rgb(167, 167, 167);
+  border: none;
+}
+
+.modal-accept {
+  width: 105px;
+  margin: 10px;
+  padding: 6px;
+  border-radius: 20px;
+  font-family: "Press Start 2P", cursive;
+  color: #f8f8f8;
+  background-color: var(--lighter-red);
+  border: transparent;
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  border-radius: 40px 40px 5px 5px;
+  background-color: #a4a1a184;
+}
+
+.members {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.members-name {
+  font-size: 10px;
+  text-align: center;
+  color: var(--lighter-green);
+  margin-bottom: 5px;
+}
+
+.members-logo {
+  margin: 5px;
+  width: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+a {
+  display: flex;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.invalid {
+  border: solid 1px var(--lighter-red);
+  box-shadow: 0 0 10px var(--lighter-red);
+}
+
+.error {
+  color: var(--lighter-red);
+  display: block;
+  font-size: 10px;
+}
+
+.dissapear {
+  opacity: 0;
+}
+
+.button-start-enabled {
+  background-color: var(--lighter-red);
+}
+
+@media (min-width: 425px) {
+  .game-story-text {
     font-size: 13px;
-    color: var(--white-text);
-    line-height: 15px;
+  }
+  footer {
+    height: 60px;
+    border-radius: 0;
+    border-radius: 10px;
+  }
+
+  .members {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .member {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+  }
+
+  .members-logo {
+    margin: 5px;
+    width: 1rem;
+  }
 }
 
-.buttons{
+@media (min-width: 768px) {
+  .game-story-text {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  footer {
+    height: 60px;
+    border-radius: 0;
+  }
+
+  .members {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .member {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+  }
+
+  .members-logo {
+    margin: 5px;
+    width: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-story-text {
+    font-size: 21px;
+    line-height: 23px;
+  }
+
+  footer {
+    height: 60px;
+    border-radius: 0;
+  }
+
+  .members {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .member {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+  }
+
+  .members-logo {
+    margin: 5px;
+    width: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  svg {
+    width: 100vw;
+    height: 58vh;
+    position: fixed;
+    top: 0.8em;
+  }
+
+  .game-story-text {
+    position: fixed;
+    top: 25%;
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  .buttons {
     position: absolute;
     z-index: 1;
     bottom: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-  
-.buttons .name {
-    padding: 10px 1px;
-    border-radius: 20px;
-    border: 2px solid black;
-    font-size: 8px;
-    color: var(--white-text);
-    background-color: var(--lighter-red);
-    font-family: 'Press Start 2P', cursive;
-    margin-left: 10px;
-    cursor: pointer;
-}
-  
-.buttons .start {
-    padding: 11px 1px;
-    border-radius: 20px;
-    border: 2px solid black;
+  }
+
+  .buttons .button-name {
+    padding: 16px 5px;
+    border-radius: 25px;
+    font-size: 9px;
+    margin-right: 13px;
+  }
+
+  .button-start {
+    padding: 16px 5px;
+    border-radius: 25px;
     right: 8rem;
-    font-size: 7px;
-    color: var(--white-text);
-    background-color: #a4a1a184;
-    font-family: 'Press Start 2P', cursive;
-    margin-left: -10px;
-    cursor: pointer;
-}
+    font-size: 8px;
+    margin-left: 13px;
+  }
 
-.modal{
-    font-size: 15px;
-    text-align: center;
-    border-radius: 40px;
-    border: transparent;
-    padding: 30px;
-    width: fit-content;
-    background-color: #0a0a0ac4;
-    color: #f8f8f8;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-}
-
-.modal.open {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-} 
-
-.modal::backdrop{
-    background-color: rgba(0, 0, 0, 0.318);
-}
-
-.modal-close{
-    font-size: 10px;
-    font-family: 'Press Start 2P', cursive;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--lighter-red);
+  .modal-close {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: transparent;
-    border: none;
-}
+    top: 20px;
+    right: 20px;
+  }
 
-.modal input{
-    font-family: 'Press Start 2P', cursive;
-    border-radius: 20px;
-    padding: 15px;
-    max-width: 250px;
-    margin: 10px;
-    background-color: rgb(167, 167, 167);
-    border: none;
-}
+  .modal p {
+    font-size: 23px;
+  }
 
-.modal-accept{
-    width: 105px;
-    margin: 10px;
-    padding: 6px;
-    border-radius: 20px;
-    font-family: 'Press Start 2P', cursive;
-    color: #f8f8f8;
-    background-color: var(--lighter-red);
-    border: transparent;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
-}
+  .modal input {
+    padding: 20px;
+    max-width: 1000px;
+    width: 380px;
+    font-size: 20px;
+  }
 
-.dissapear{
-    opacity: 0;
-}
+  .modal-accept {
+    width: 150px;
+    margin: 15px;
+    padding: 12px;
+  }
 
-.members{
-    position: fixed;
-    bottom: 0;
-    left: 0;
+  footer {
+    height: 60px;
+    border-radius: 0;
+  }
+
+  .members {
     width: 100%;
-    height: 80px;
-    border-radius: 40px 40px 5px 5px;
-    background-color: #a4a1a184;
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
-}
+  }
 
-.navbar{
-    display: none;
-}
-
-.footer-navbar{
-    width: 100%;
-    border-radius: 20px 20px 5px 5px;
-    background-color: #a4a1a184;
-    border: transparent;
+  .member {
     display: flex;
-    flex-direction: column;
-    position: fixed;
-    bottom: 1em;
-    left: 0;
-    /* padding-bottom: 1em; */
-}
+    flex-direction: row;
+    margin-left: 10px;
+  }
 
-.members-logo{
-    padding: 5px;
-}
-  
-.show {
+  .members-logo {
+    margin: 5px;
+    width: 2rem;
+  }
+
+  .button-start-enabled {
+    background-color: var(--lighter-red);
+  }
+
+  .error {
+    color: var(--lighter-red);
     display: block;
+    font-size: 15px;
+  }
 }
-  
-.members-name{
-    font-size: 10px;
-    text-align: center;
-    color: var(--lighter-green);
-}
-
