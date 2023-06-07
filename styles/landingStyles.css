@@ -160,9 +160,21 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 85px;
   border-radius: 40px 40px 5px 5px;
   background-color: #a4a1a184;
+}
+
+.about-us{
+  font-size: 7px;
+  position:absolute;
+  bottom: 0.1px;
+  right: 18px;
+}
+
+.about-us a{
+  text-decoration: none;
+  color: var(--white-text);
 }
 
 .members {
@@ -227,14 +239,26 @@ a {
   background-color: var(--lighter-red);
 }
 
+@media (min-width: 375px) {
+  .about-us{
+    position:absolute;
+    right: 25px;
+  }
+}
+
 @media (min-width: 425px) {
   .game-story-text {
     font-size: 13px;
   }
   footer {
-    height: 60px;
+    height: 65px;
     border-radius: 0;
     border-radius: 10px;
+  }
+
+  .about-us{
+    position:absolute;
+    right: 20px;
   }
 
   .members {
@@ -264,7 +288,7 @@ a {
     line-height: 22px;
   }
   footer {
-    height: 60px;
+    height: 68px;
     border-radius: 0;
   }
 
@@ -296,8 +320,14 @@ a {
   }
 
   footer {
-    height: 60px;
+    height: 70px;
     border-radius: 0;
+  }
+
+  .about-us{
+    position: absolute;
+    right: 10px;
+    font-size: 9px;
   }
 
   .members {
@@ -383,8 +413,18 @@ a {
   }
 
   footer {
-    height: 60px;
+    height: 75px;
     border-radius: 0;
+  }
+
+  .about-us{
+    position: absolute;
+    right: 10px;
+    font-size: 10px;
+  }
+
+  .about-us a{
+    color: #fafafa;
   }
 
   .members {
