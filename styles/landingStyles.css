@@ -165,14 +165,14 @@ footer {
   background-color: #a4a1a184;
 }
 
-.about-us{
+.about-us {
   font-size: 7px;
-  position:absolute;
+  position: absolute;
   bottom: 0.1px;
   right: 18px;
 }
 
-.about-us a{
+.about-us a {
   text-decoration: none;
   color: var(--white-text);
 }
@@ -240,8 +240,8 @@ a {
 }
 
 @media (min-width: 375px) {
-  .about-us{
-    position:absolute;
+  .about-us {
+    position: absolute;
     right: 25px;
   }
 }
@@ -256,8 +256,8 @@ a {
     border-radius: 10px;
   }
 
-  .about-us{
-    position:absolute;
+  .about-us {
+    position: absolute;
     right: 20px;
   }
 
@@ -324,7 +324,7 @@ a {
     border-radius: 0;
   }
 
-  .about-us{
+  .about-us {
     position: absolute;
     right: 10px;
     font-size: 9px;
@@ -417,13 +417,13 @@ a {
     border-radius: 0;
   }
 
-  .about-us{
+  .about-us {
     position: absolute;
     right: 10px;
     font-size: 10px;
   }
 
-  .about-us a{
+  .about-us a {
     color: #fafafa;
   }
 
