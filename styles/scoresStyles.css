@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Press Start 2P";
+}
+
+:root {
+    --lighter-red: #c51e0e;
+    --white-text: #c3c4d3;
+}
+
+body {
+    font-family: "Press Start 2P", cursive;
+    background-image: url("/assets/background/space.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-transform: uppercase;
+}
+
+/*Header Galaxian*/
+header {
+    height: 100%;
+    font-size: 3.5rem;
+}
+
+svg {
+    width: 100vw;
+    height: 50vh;
+    position: fixed;
+    top: 1em;
+}
+
+path {
+    fill: transparent;
+}
+
+text {
+    fill: var(--lighter-red);
+}
+
+/*Modal de Scores*/
+h2{
+    color: var(--lighter-red);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(58, 58, 58, 0.8);
+    width: 80%;
+    height: 50%;
+    border-radius: 10%;
+    padding: 1.25rem;
+    overflow: hidden;
+}
+
+.scores {
+    margin: 0 auto;
+    color: var(--lighter-red);
+    font-size: 1.3rem;
+    width: 100%;
+}
+
+tr > td:last-child{
+    color: var(--white-text);
+}
+
+.scores th,
+.scores td {
+    padding: 0.3rem;
+    text-align: center;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scores tr {
+    opacity: 0;
+    animation: slideIn 10s ease-in-out forwards;
+}
+
+/*Botones*/
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+.button-home{
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.button-replay{
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.button-home,
+.button-replay{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--lighter-red);
+    color: var(--white-text);
+    font-size: 0.5rem;
+    cursor: pointer;
+}
+
+.button-home:hover,
+.button-replay:hover,
+.github:hover
+{
+    background-color: var(--white-text);
+    color: var(--lighter-red);
+}
+
+.github {
+    grid-area: 2 / 1 / 3 / 3;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--lighter-red);
+    color: var(--white-text);
+    font-size: .8rem;
+    padding: 1em 2em;
+    cursor: pointer;
+}
+
+/*Media Queries*/
+@media(min-width:768px) {
+    svg {
+        width: 100vw;
+        height: 58vh;
+        position: fixed;
+        top: 0.3em;
+    }
+
+    .modal {
+        width: 40%;
+        height: 55%;
+    }
+
+    .scores {
+        font-size: 1.5rem;
+    }
+
+    .scores th,
+    .scores td {
+        padding: 0.5rem;
+    }
+
+    .button-home,
+    .button-replay{
+    width: 5rem;
+    height: 5rem;
+    font-size: .8rem;
+    }
+
+    .github {
+        font-size: 1rem;
+        padding: 1em 2em;
+    }
+}

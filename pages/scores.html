@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/icons/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/scoresStyles.css">
+    <title>Galaxian Scores</title>
+</head>
+
+<body>
+    <header class="title">
+        <svg viewBox="0 100 600 600">
+            <path id="curve" d="M100,300 C188,210 400,208 500,300" />
+            <text width="600">
+                <textPath xlink:href="#curve">Galaxian</textPath>
+            </text>
+        </svg>
+    </header>
+    <main>
+        <section class="modal">
+            <h2>GAME OVER</h2>
+            <h2>HIGH SCORES</h2>
+            <table class="scores">
+                <tr>
+                    <th>NAME</th>
+                    <th>SCORE</th>
+                </tr>
+                <tr>
+                    <td>ANL</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>MAR</td>
+                    <td>2500</td>
+                </tr>
+                <tr>
+                    <td>NMR</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td>SOC</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>GAG</td>
+                    <td>0500</td>
+                </tr>
+                <tr>
+                    <td>AAA</td>
+                    <td>0100</td>
+                </tr>
+            </table>
+        </section>
+        <section class="buttons">
+            <button class="button-home">HOME</button>
+            <button class="button-replay">PLAY AGAIN</button>
+            <button class="github">GITHUB</button>
+        </section>
+        <script src="/scripts/scores.js"></script>
+    </main>
+</body>
+
+</html>
