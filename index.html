@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/landingStyles.css" />
+    <link href="/assets/icons/favicon.ico" rel="icon" type="image/x-icon" />
+    <title>Welcome to The Galaxian</title>
+  </head>
+  <body>
+    <section class="video-container">
+      <video autoplay loop src="/assets/background/spacecraft-background.mp4"></video>
+    </section>
+
+    <section class="title">
+      <svg viewBox="0 100 600 600">
+        <path id="curve" d="M100,300 C188,210 400,208 500,300" />
+        <text width="600">
+          <textPath xlink:href="#curve">Galaxian</textPath>
+        </text>
+      </svg>
+    </section>
+
+    <section class="game-story">
+      <p class="game-story-text">
+        El mate estaba listo cuando los invasores extraterrestres llegaron. Con
+        destreza, los gauchos arrojaron boleadoras espaciales, derrotando a los
+        invasores y brindando con fernet en la victoria. ¡Viva Argentina!
+      </p>
+    </section>
+
+    <section class="buttons">
+      <button class="button-name">Name</button>
+      <button class="button-start">Start</button>
+    </section>
+
+    <dialog class="modal">
+      <div class="modal-content">
+        <button class="modal-close">X</button>
+        <form action="">
+          <label>
+            <p>INGRESA TU NOMBRE</p>
+            <input placeholder="NOMBRE" type="text" name="name" />
+            <span></span>
+          </label>
+          <br />
+          <button class="modal-accept" type="submit">Aceptar</button>
+        </form>
+      </div>
+    </dialog>
+
+    <footer>
+      <section class="about-us">
+        <a href="/pages/about-us.html">
+          <p>ABOUT US</p>
+        </a>
+      </section>
+      <section class="members">
+        <div class="member">
+          <p class="members-name">Antonela Ledesma</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/antonela-ledesma/">
+              <img
+                class="members-logo"
+                src="/assets/icons/icon-linkedin.svg"
+                alt="logo-linkedin"
+              />
+            </a>
+            <a href="https://github.com/AntonelaLedesma7">
+              <img
+                class="members-logo"
+                src="/assets/icons/icon-github.svg"
+                alt="logo-github"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="member">
+          <p class="members-name">Nicolás Ruiz</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/nicolasmaxiruiz/">
+              <img
+                class="members-logo"
+                src="/assets/icons/icon-linkedin.svg"
+                alt="logo-linkedin"
+              />
+            </a>
+            <a href="https://github.com/NicolasMRuiz">
+              <img
+                class="members-logo"
+                src="/assets/icons/icon-github.svg"
+                alt="logo-github"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="member">
+          <p class="members-name">Martina Vargas</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/martina-vargass/">
+              <img
+                class="members-logo"
+                src="/assets/icons/icon-linkedin.svg"
+                alt="logo-linkedin"
+              />
+            </a>
+            <a href="https://github.com/martinavargas">
+              <img
+                class="members-logo"
+                src="/assets/icons/icon-github.svg"
+                alt="logo-github"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script src="/scripts/landing.js"></script>
+  </body>
+</html>

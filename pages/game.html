@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/gameStyles.css" />
+    <link href="/assets/icons/favicon.ico" rel="icon" type="image/x-icon" />
     <title>Galaxian</title>
-</head>
-<body>
+  </head>
+  <body>
+    <audio src="/assets/sounds/cosmos1.mp3" autoplay once></audio>
+    <!--  
+      <div id="player-stats">
+        <h2>Score: <span id="score">0</span></h2>
+        <h2>High Score: <span id="high">0</span></h2>
+        <h2>Lives: <span id="lives">3</span></h2>
+      </div>
+    -->
+    <header>  
+      <p id="score">score</p>
+      <span id="score-value">0000</span>
+      <p id="high-score">high score</p>
+      <span id="high-score-value">0000</span>
+      <p id="lives">lives</p>
+      <span id="lives-value">3</span>
+    </header>
     
-</body>
+    <section class="start-game">
+      <div class="ready">
+        <span class="word-1">Are</span>
+        <span class="word-2">you</span>
+        <span class="word-3">ready?</span>
+      </div>
+    </section>
+    <main>
+      <section class="formation">
+        <div class="higher-level">
+          <div id="ship1" class="enemy-ship red">
+            <img src="/assets/enemys/alien-rojo.svg" name="red" alt="Enemy Ship" />
+          </div>
+          <div id="ship2" class="enemy-ship red">
+            <img src="/assets/enemys/alien-rojo.svg" name="red" alt="Enemy Ship" />
+          </div>
+          <div id="ship3" class="enemy-ship red">
+            <img src="/assets/enemys/alien-rojo.svg" name="red" alt="Enemy Ship" />
+          </div>
+          <div id="ship4" class="enemy-ship red">
+            <img src="/assets/enemys/alien-rojo.svg" name="red" alt="Enemy Ship" />
+          </div>
+          <div id="ship5" class="enemy-ship red">
+            <img src="/assets/enemys/alien-rojo.svg" name="red" alt="Enemy Ship" />
+          </div>
+          <div id="ship6" class="enemy-ship red">
+            <img src="/assets/enemys/alien-rojo.svg" name="red" alt="Enemy Ship" />
+          </div>
+        </div>
+        <div class="medium-level">
+          <div id="ship7" class="enemy-ship yellow">
+            <img src="/assets/enemys/alien-amarillo.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship8" class="enemy-ship yellow">
+            <img src="/assets/enemys/alien-amarillo.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship9" class="enemy-ship yellow">
+            <img src="/assets/enemys/alien-amarillo.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship10" class="enemy-ship yellow">
+            <img src="/assets/enemys/alien-amarillo.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship11" class="enemy-ship yellow">
+            <img src="/assets/enemys/alien-amarillo.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship12" class="enemy-ship yellow">
+            <img src="/assets/enemys/alien-amarillo.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship13" class="enemy-ship yellow">
+            <img src="/assets/enemys/alien-amarillo.svg" alt="Enemy Ship" />
+          </div>
+        </div>
+        <div class="ease-level-blue">
+          <div id="ship14" class="enemy-ship blue">
+            <img src="/assets/enemys/alien-azul.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship15" class="enemy-ship blue">
+            <img src="/assets/enemys/alien-azul.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship16" class="enemy-ship blue">
+            <img src="/assets/enemys/alien-azul.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship17" class="enemy-ship blue">
+            <img src="/assets/enemys/alien-azul.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship18" class="enemy-ship blue">
+            <img src="/assets/enemys/alien-azul.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship19" class="enemy-ship blue">
+            <img src="/assets/enemys/alien-azul.svg" alt="Enemy Ship" />
+          </div>
+          <div id="ship20" class="enemy-ship blue">
+            <img src="/assets/enemys/alien-azul.svg" alt="Enemy Ship" />
+          </div>
+        </div>
+        <div class="ease-level-green">
+          <div id="ship21" class="enemy-ship green">
+            <img src="/assets/enemys/alien-verde.svg" alt="Enemy Ship">
+          </div>
+          <div id="ship22" class="enemy-ship green">
+            <img src="/assets/enemys/alien-verde.svg" alt="Enemy Ship">
+          </div>
+          <div id="ship23" class="enemy-ship green">
+            <img src="/assets/enemys/alien-verde.svg" alt="Enemy Ship">
+          </div>
+          <div id="ship24" class="enemy-ship green">
+            <img src="/assets/enemys/alien-verde.svg" alt="Enemy Ship">
+          </div>
+          <div id="ship25" class="enemy-ship green">
+            <img src="/assets/enemys/alien-verde.svg" alt="Enemy Ship">
+          </div>
+          <div id="ship26" class="enemy-ship green">
+            <img src="/assets/enemys/alien-verde.svg" alt="Enemy Ship"></div>
+        </div>
+      </section>
+      <audio id="collisionSound" src="/assets/sounds/collision.mp3"></audio>
+      <section class="space-ship">
+        <div id="my-ship">
+          <img name="ship" src="/assets/player/nave.svg" alt="My Ship" />
+        </div>
+      </section>
+      <section class="container">
+        <div class="wrapper">
+          <button id="left">left</button>
+          <button id="fire">fire</button>
+          <button id="right">right</button>
+        </div>
+      </section>
+    </main>
+    <script src="/scripts/game.js"></script>
+  </body>
 </html>
